@@ -14,9 +14,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="buckets_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="73" height="31" alignment="left" text="x Pos" id="Era-1o-jNU"/>
-                        <label width="73" height="31" alignment="left" text="y Pos" id="u1Z-db-JOx"/>
-                        <label width="73" height="31" alignment="left" text="z Pos" id="GT1-bA-lSa"/>
+                        <label width="136" alignment="left" text="xPos" id="fBM-S5-x6Y"/>
+                        <label width="136" alignment="left" text="yPos" id="98T-bf-Dpo"/>
+                        <label width="136" alignment="left" text="zPos" id="JmU-mX-yg6"/>
                         <button width="1" alignment="left" title="Start" id="7Bi-qc-lg8">
                             <connections>
                                 <action selector="start" destination="AgC-eL-Hgc" id="w64-l9-K4k"/>
@@ -29,9 +29,9 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="xLocation" destination="Era-1o-jNU" id="Ujn-od-EQg"/>
-                        <outlet property="yLocation" destination="u1Z-db-JOx" id="uuB-jO-SUz"/>
-                        <outlet property="zLocation" destination="GT1-bA-lSa" id="fbH-sg-chT"/>
+                        <outlet property="xLocation" destination="fBM-S5-x6Y" id="m7w-UH-JXb"/>
+                        <outlet property="yLocation" destination="98T-bf-Dpo" id="NmD-FO-CYs"/>
+                        <outlet property="zLocation" destination="JmU-mX-yg6" id="6dA-cl-BKJ"/>
                     </connections>
                 </controller>
             </objects>

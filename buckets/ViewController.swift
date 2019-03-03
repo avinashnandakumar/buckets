@@ -16,6 +16,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     var allData = String()
     var count = 0
     var total = 0
+    var runningTotal = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         if WCSession.isSupported() {
@@ -64,6 +65,10 @@ class ViewController: UIViewController, WCSessionDelegate {
                 self.allData = self.allData + s! + ", "
                 self.total += 1
             }
+            if ((self.total % 960) == 0) {
+                self.runningTotal += 1
+                self.zView.text = String(self.runningTotal)
+            }
             
 //            self.allData.append(x!)
 //            self.allData.append(y!)
@@ -100,19 +105,22 @@ class ViewController: UIViewController, WCSessionDelegate {
 //            print(val, terminator: ", ")
 //        }
 //        let str = "Super long string here"
-        let filename = getDocumentsDirectory().appendingPathComponent("roaster" + String(self.count) + ".txt")
+        let filename = getDocumentsDirectory().appendingPathComponent("toaster" + String(self.count) + ".txt")
         self.count += 1
         
         do {
             try allData.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
             allData = String()
+            self.yView.text = String(self.total)
+            self.total = 0
+            self.runningTotal = 0
+            self.zView.text = String(0)
             print("coore")
         } catch {
             print("we are bad")
             // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
         }
         self.xView.text = "DONE!"
-        self.yView.text = String(self.total)
 
 
 
