@@ -214,7 +214,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 //            print(z)
 //            print(count)
             //}
-            if count >= 240 {
+            if count >= 241 {
 //                allData.append(shot)
                 WKInterfaceDevice.current().play(.success)
                 self.timer?.invalidate()
