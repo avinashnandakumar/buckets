@@ -22,6 +22,11 @@
                                 <action selector="start" destination="AgC-eL-Hgc" id="w64-l9-K4k"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Stop" id="Scj-et-cmq">
+                            <connections>
+                                <action selector="stop" destination="AgC-eL-Hgc" id="lww-mg-l1O"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="xLocation" destination="Era-1o-jNU" id="Ujn-od-EQg"/>

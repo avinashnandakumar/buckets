@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423743C2222B95FD00A63BF3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423743C1222B95FD00A63BF3 /* HealthKit.framework */; };
 		82608A2C222B3C3300699614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82608A2B222B3C3300699614 /* AppDelegate.swift */; };
 		82608A2E222B3C3300699614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82608A2D222B3C3300699614 /* ViewController.swift */; };
 		82608A31222B3C3300699614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82608A2F222B3C3300699614 /* Main.storyboard */; };
@@ -65,6 +66,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		423743BF222B95FC00A63BF3 /* buckets WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "buckets WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		423743C1222B95FD00A63BF3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		82608A28222B3C3300699614 /* buckets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buckets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82608A2B222B3C3300699614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82608A2D222B3C3300699614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,12 +100,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423743C2222B95FD00A63BF3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		423743C0222B95FD00A63BF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				423743C1222B95FD00A63BF3 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82608A1F222B3C3300699614 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +122,7 @@
 				82608A3E222B3C3500699614 /* buckets WatchKit App */,
 				82608A4D222B3C3500699614 /* buckets WatchKit Extension */,
 				82608A29222B3C3300699614 /* Products */,
+				423743C0222B95FD00A63BF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +162,7 @@
 		82608A4D222B3C3500699614 /* buckets WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				423743BF222B95FC00A63BF3 /* buckets WatchKit Extension.entitlements */,
 				82608A4E222B3C3500699614 /* InterfaceController.swift */,
 				82608A50222B3C3500699614 /* ExtensionDelegate.swift */,
 				82608A52222B3C3500699614 /* NotificationController.swift */,
@@ -233,6 +247,11 @@
 					};
 					82608A48222B3C3500699614 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -469,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "buckets WatchKit Extension/buckets WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53PB47F2K3;
 				INFOPLIST_FILE = "buckets WatchKit Extension/Info.plist";
@@ -491,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "buckets WatchKit Extension/buckets WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53PB47F2K3;
 				INFOPLIST_FILE = "buckets WatchKit Extension/Info.plist";
