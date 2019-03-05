@@ -14,8 +14,7 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
-    
-    @IBOutlet var xLocation: WKInterfaceLabel!
+    @IBOutlet weak var xLocation: WKInterfaceLabel!
     @IBOutlet var yLocation: WKInterfaceLabel!
     @IBOutlet var zLocation: WKInterfaceLabel!
     var motion: CMMotionManager!
@@ -73,7 +72,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 //        shot = [[String]]()
         count = 0
         self.timer = nil
-        WKInterfaceDevice.current().play(.success)
         self.startDeviceMotion()
         //allData.append(shot)
 //        print(self.motion.isAccelerometerActive)
@@ -87,6 +85,62 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             print(element, terminator:", ")
         }
         self.allData = [String]()
+//        print("ROASTER")
+        //let fileUrl = NSURL(fileURLWithPath: "/foo123.plist") // Your path here
+//        let listOfTasks = [["Hi", "Hello", "12:00"], ["Hey there", "What's up?", "3:17"]]
+        
+        // Save to file
+        //(samples as NSArray).write(to: fileUrl as URL, atomically: true)
+        
+        // Read from file
+        //let savedArray = NSArray(contentsOf: fileUrl as URL) as! [[[String]]]
+        
+        //print(savedArray[0][0][0])
+//        if (WCSession.default.isReachable) {
+//            // this is a meaningless message, but it's enough for our purposes
+//            let message = ["Message": allData] //[0][0][0]]
+//            WCSession.default.sendMessage(message, replyHandler: nil)
+//            allData = [String]()
+//        }
+//        let documentsDirectoryPathString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+//        let documentsDirectoryPath = NSURL(string: documentsDirectoryPathString)!
+//
+//        let jsonFilePath = documentsDirectoryPath.appendingPathComponent("sameer/test_adi_sameer_avi.json")
+//        let fileManager = FileManager.default
+//        var isDirectory: ObjCBool = false
+//
+//        // creating a .json file in the Documents folder
+//        if !fileManager.fileExists(atPath: (jsonFilePath?.absoluteString)!, isDirectory: &isDirectory) {
+//            let created = fileManager.createFile(atPath: (jsonFilePath?.absoluteString)!, contents: nil, attributes: nil)
+//            if created {
+//                print("File created ")
+//            } else {
+//                print("Couldn't create file for some reason")
+//            }
+//        } else {
+//            print("File already exists")
+//        }
+//
+//
+//        // creating JSON out of the above array
+//        var jsonData: NSData!
+//        do {
+//            jsonData = try JSONSerialization.data(withJSONObject: samples, options: JSONSerialization.WritingOptions()) as NSData
+//            let jsonString = String(data: jsonData as Data, encoding: String.Encoding.utf8)
+//            print(jsonString ?? "json string didn't work")
+//        } catch let error as NSError {
+//            print("Array to JSON conversion failed: \(error.localizedDescription)")
+//        }
+//
+//        // Write that JSON to the file created earlier
+////        let jsonFilePath = documentsDirectoryPath.appendingPathComponent("test.json")
+//        do {
+//            let file = try FileHandle(forWritingTo: jsonFilePath!)
+//            file.write(jsonData as Data)
+//            print("JSON data was written to teh file successfully!")
+//        } catch let error as NSError {
+//            print("Couldn't write to file: \(error.localizedDescription)")
+//        }
     }
     
     override func willActivate() {
@@ -214,9 +268,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 //            print(z)
 //            print(count)
             //}
+<<<<<<< HEAD
             if count >= 241 {
+=======
+            if count >= 80 {
+>>>>>>> parent of b57c91a... hello
 //                allData.append(shot)
-                WKInterfaceDevice.current().play(.success)
                 self.timer?.invalidate()
                 self.timer = nil
             }
